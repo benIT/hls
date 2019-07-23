@@ -1,0 +1,16 @@
+version: "3"
+services:
+  web:
+    image: benit/stretch-php-7.1
+    environment:
+      - http_proxy
+      - https_proxy
+      - HTTP_PROXY
+      - HTTPS_PROXY
+      - no_proxy
+    container_name: hls
+    working_dir: /var/www/html
+    ports:
+      - 8081:80
+    volumes:
+      - ./:/var/www/html
